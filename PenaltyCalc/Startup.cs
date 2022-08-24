@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PenaltyCalc.BusinessLayer;
-using PenaltyCalc.DataLayer;
 
 namespace PenaltyCalc
 {
@@ -28,9 +26,6 @@ namespace PenaltyCalc
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-
-            services.AddScoped<ISqlDataHelper, SqlDataHelper>();
-            services.AddScoped<IPenaltyCalculator, PenaltyCalculator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

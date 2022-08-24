@@ -1,0 +1,22 @@
+<p>penalty-calculator works!</p>
+
+<form [formGroup]="paneltyForm" class="w-50">
+
+    <div class="formGroup">
+        <label for="checkoutDate">Checkout Date</label>
+        <input type="date" id="checkoutDate" formControName="checkoutDate">
+    </div>
+    <div class="formGroup">
+        <label for="checkinDate">Checkin Date </label>
+        <input type="date" id="checkinDate" formControName="checkinDate">
+    </div>
+    <div class="formGroup">
+        <label for="country">country </label>
+        <select name="country" id="country">
+            <option *ngFor="let con of countries" value="country">{{con}}</option>
+        </select>
+    </div>
+
+</form>
+<button  (click)="getAndPopulatePenalty()">Calculate Panelty</button>
+<input type="text" readonly [value]="penalty">
