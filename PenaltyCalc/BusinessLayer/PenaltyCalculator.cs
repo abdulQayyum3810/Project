@@ -48,30 +48,15 @@ namespace PenaltyCalc.BusinessLayer
         public int CalculateBusinessDays(DateTime checkout, DateTime checkin, List<int> weekend, List<DateTime> holidays)
         {
             int businessDays = 0;
-
-
-            //for (DateTime currentDate = checkout; currentDate <= checkin; currentDate.AddDays(1))
-            //{
-            //    int currentDayOfWeek = Convert.ToInt32(currentDate.DayOfWeek);
-            //    if (!(weekend.Contains(currentDayOfWeek) || holidays.Contains(currentDate)))
-            //    {
-            //        businessDays++;
-            //    }
-
-            //}
-
-            TimeSpan totalDays = checkin-checkout ;
-            DateTime currentDate = checkout;
-            for(int i = 0; i < totalDays.TotalDays; i++)
+            for (DateTime currentDate = checkout; currentDate <= checkin; currentDate=currentDate.AddDays(1))
             {
                 int currentDayOfWeek = Convert.ToInt32(currentDate.DayOfWeek);
-                if(weekend.Contains(currentDayOfWeek) || holidays.Contains(currentDate))
+                if (!(weekend.Contains(currentDayOfWeek) || holidays.Contains(currentDate)))
                 {
                     businessDays++;
                 }
-                currentDate.AddDays(1);
-            }
 
+            }
             return businessDays;
         }
     }
