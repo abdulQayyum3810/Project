@@ -1,0 +1,9 @@
+
+select wd.dayName, w.country from weekend as w
+inner join weekDays as wd on w.dayCode=wd.dayCode
+
+where country='Pakistan'
+
+
+
+select *,CONVERT(varchar,holidayDate,6) from holiday;

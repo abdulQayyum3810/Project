@@ -1,0 +1,19 @@
+insert into WeekDays values
+(0,'Sunday'),
+(1,'Moday'),
+(2,'Tuesday'),
+(3,'Wednesday'),
+(4,'Thursday'),
+(5,'Friday'),
+(6,'Saturday');
+
+
+insert into country values ('Pakistan',0,50, 'PKR'),('UAE',8,10, 'AED');
+
+insert into weekend values (0,'Pakistan'),(6,'Pakistan'),(5,'UAE'),(6,'UAE');
+
+
+insert into holiday values 
+	('Ashura Day 1', Cast('8/8/2022' AS date),'Pakistan'), /* mm/dd/yyyy */
+	('Ashura Day 2', CAST('8/9/2022' AS date),'Pakistan'),
+	('Independence Day', Cast('8/14/2022' AS date),'Pakistan')
